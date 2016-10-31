@@ -1,11 +1,5 @@
-'use strict';
 import React from 'react';
-import style from './styles/main.scss';
+import ReactDom from 'react-dom';
+import App from './components/app';
 
-class App extends React.Component {
-  render() {
-    return <div>Al salam !</div>
-  }
-}
-
-export default App;
+ReactDom.render(<App />, document.getElementById('app'));
