@@ -1,6 +1,8 @@
  version: '2'
  services:
-   app:
-     build: .
-     ports:
-       - "3333:3333"
+    app:
+        build: .
+        ports:
+            - "9000:9000"
+        volumes:
+            - ".:/var/www/:rw"

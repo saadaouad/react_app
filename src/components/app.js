@@ -4,7 +4,7 @@ import style from '../styles/main.scss';
 
 class App extends React.Component {
   render() {
-    return <div>Al salam !</div>
+    return <div>Al salam alikum!</div>
   }
 }
 
