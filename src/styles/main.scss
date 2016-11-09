@@ -1,5 +1,7 @@
+@import 'variables';
+
 body {
-  background: #000;
+  background: $orange; 
   #app {
     color: #fff;
     font-size: 30px;
