@@ -1,18 +1,20 @@
-import  React from 'react';
-import { IndexRoute, Route, hashHistory, Router } from 'react-router';
-//import Home from './Home';
-const Home =  () => <div> <h1>Home</h1> </div>;
-const Contact =  () => <div> <h1>Contact</h1> </div>;
-const Blog =  () => <div> <h1>Blog</h1> </div>;
+import React from 'react';
+import {IndexRoute, Route, hashHistory, Router } from 'react-router';
+import {About, Services, Work} from './containers';
+import Header from './Header';
 
-class  Routes extends React.Component {
-    render(){
-       return (
-           <Router history={hashHistory}>
-               <Route path="/" component={Home}></Route>
-           </Router>
-       )
-    }
+
+class Routes extends React.Component {
+  render() {
+    return (
+      <Router history={ hashHistory }>
+        <Header/>
+        <Route path="/" component={ Services }></Route>
+        <Route path="/work" component={ Work }></Route>
+        <Route path="/about" component={ About }></Route>
+      </Router>
+    )
+  }
 }
 
 export default Routes;
