@@ -1,5 +1,12 @@
+'use strict';
+import 'babel-polyfill';
 import React from 'react';
-import ReactDom from 'react-dom';
-import App from './components/App.js';
+import {render} from 'react-dom';
+import {Router, browserHistory} from 'react-router';
+import routes from './routes';
+import './styles/main.scss';
 
-ReactDom.render(<App />, document.getElementById('app'));
+render(
+  <Router history={browserHistory} routes={routes} />,
+  document.getElementById('app')
+);
