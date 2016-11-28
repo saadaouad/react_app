@@ -1,6 +1,8 @@
 'use strict';
 import React from 'react';
 import Helmet from 'react-helmet';
+import {connect} from 'react-redux';
+import * as userAction from '../actions/userAction';
 
 class UserPage extends React.Component {
   constructor(props, context){
@@ -19,7 +21,8 @@ class UserPage extends React.Component {
   }
 
   onClickSave() {
-    console.log(this.state.user.title);
+    //console.log(this.state.user.title);
+    this.props.dispatch(userAction.createUser(this.state.user));
   }
 
   render() {
@@ -41,4 +44,10 @@ class UserPage extends React.Component {
   }
 }
 
-export default UserPage;
+function mapStateToProps(state, ownProps) {
+  return {
+    users: state.users
+  };
+}
+
+export default connect(mapStateToProps)(UserPage);
