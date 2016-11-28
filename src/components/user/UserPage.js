@@ -25,9 +25,9 @@ class UserPage extends React.Component {
   render() {
     return (
       <div>
+        <Helmet title="User"/>
         <h1>User</h1>
         <h2>Add user</h2>
-        <Helmet title="User"/>
         <input
           type="text"
           onChange={this.onTitleChange}
