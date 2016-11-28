@@ -21,7 +21,7 @@ class UserPage extends React.Component {
   }
 
   onClickSave() {
-    this.props.dispatch(userAction.createUser(this.state.user));
+    this.props.createUser(this.state.user);
   }
 
   userRow(user, index) {
@@ -49,8 +49,8 @@ class UserPage extends React.Component {
 }
 
 UserPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  users: PropTypes.array.isRequired
+  users: PropTypes.array.isRequired,
+  createUser: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
@@ -59,4 +59,10 @@ function mapStateToProps(state, ownProps) {
   };
 }
 
-export default connect(mapStateToProps)(UserPage);
+function mapDispatchToProps(dispatch) {
+  return {
+    createUser: user => dispatch(userAction.createUser(user))
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserPage);
