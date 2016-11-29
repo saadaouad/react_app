@@ -2,6 +2,7 @@
 import React , {PropTypes} from 'react';
 import Helmet from 'react-helmet';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import * as userAction from '../../actions/userAction';
 
 class UserPage extends React.Component {
@@ -21,7 +22,7 @@ class UserPage extends React.Component {
   }
 
   onClickSave() {
-    this.props.createUser(this.state.user);
+    this.props.actions.createUser(this.state.user);
   }
 
   userRow(user, index) {
@@ -50,7 +51,7 @@ class UserPage extends React.Component {
 
 UserPage.propTypes = {
   users: PropTypes.array.isRequired,
-  createUser: PropTypes.func.isRequired
+  actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
@@ -61,7 +62,7 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    createUser: user => dispatch(userAction.createUser(user))
+    actions: bindActionCreators(userAction, dispatch)
   };
 }
 
