@@ -8,21 +8,6 @@ import * as userAction from '../../actions/userAction';
 class UserPage extends React.Component {
   constructor(props, context){
     super(props, context);
-    this.state = {
-      user: {title: ""}
-    };
-    this.onTitleChange = this.onTitleChange.bind(this);
-    this.onClickSave = this.onClickSave.bind(this);
-  }
-
-  onTitleChange(event) {
-    const user = this.state.user;
-    user.title = event.target.value;
-    this.setState({user: user});
-  }
-
-  onClickSave() {
-    this.props.actions.createUser(this.state.user);
   }
 
   userRow(user, index) {
@@ -35,15 +20,6 @@ class UserPage extends React.Component {
         <Helmet title="User"/>
         <h1>User</h1>
         {this.props.users.map(this.userRow)}
-        <h2>Add user</h2>
-        <input
-          type="text"
-          onChange={this.onTitleChange}
-          value={this.state.user.title} />
-        <input
-          type="submit"
-          value="Save"
-          onClick={this.onClickSave} />
       </div>
     );
   }
