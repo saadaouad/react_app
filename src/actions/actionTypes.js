@@ -1,1 +1,1 @@
-export const CREATE_USER = 'CREATE_USER';
+export const LOAD_USERS_SUCCESS = 'LOAD_USERS_SUCCESS';
