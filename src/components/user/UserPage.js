@@ -1,9 +1,9 @@
-'use strict';
 import React , {PropTypes} from 'react';
 import Helmet from 'react-helmet';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as userAction from '../../actions/userAction';
+import UserList from './UserList';
 
 class UserPage extends React.Component {
   constructor(props, context){
@@ -11,15 +11,17 @@ class UserPage extends React.Component {
   }
 
   userRow(user, index) {
-    return <div key={index}>{user.title}</div>;
+    return <div key={index}>{user.id}</div>;
   }
 
   render() {
+    const {users} = this.props;
+
     return (
       <div>
         <Helmet title="User"/>
-        <h1>User</h1>
-        {this.props.users.map(this.userRow)}
+        <h1>Users</h1>
+        <UserList users={users}/>
       </div>
     );
   }

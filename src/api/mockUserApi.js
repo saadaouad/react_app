@@ -7,17 +7,20 @@ const users = [
   {
     id: 'saadaouad',
     firstName: 'Saad',
-    lastName: 'Aouad'
+    lastName: 'Aouad',
+    profile: 'Developer Front-End'
   },
   {
     id: 'mohamedrez',
     firstName: 'Mohamed',
-    lastName: 'El hachimi'
+    lastName: 'El hachimi',
+    profile: 'Developer Back-End'
   },
   {
     id: 'elhachimi',
     firstName: 'Wael',
-    lastName: 'El hachimi'
+    lastName: 'El hachimi',
+    profile: 'Developer Full-Stack'
   }
 ];
 
