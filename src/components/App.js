@@ -1,5 +1,4 @@
 // This component handles the App template used on every page.
-'use strict';
 import React from 'react';
 import Header from './common/Header';
 

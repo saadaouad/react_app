@@ -1,4 +1,3 @@
-'use strict';
 import React from 'react';
 import {Link, IndexLink} from 'react-router';
 
@@ -9,7 +8,7 @@ const Header = () => {
         {" | "}
       <Link to="/about" activeClassName="active">About</Link>
         {" | "}
-      <Link to="/user" activeClassName="active">User</Link>
+      <Link to="/user" activeClassName="active">Users</Link>
         {" | "}
       <Link to="/contact" activeClassName="active">Contact</Link>
     </nav>
