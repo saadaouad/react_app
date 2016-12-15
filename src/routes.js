@@ -12,7 +12,8 @@ export default (
     <Route path="/" component={App}>
       <IndexRoute component={HomePage} />
       <Route path="about" component={AboutPage} />
-      <Route path="user" component={UserPage} />
+      <Route path="users" component={UserPage} />
+      <Route path="user" component={ManageUserPage} />
       <Route path="user/:id" component={ManageUserPage} />
       <Route path="contact" component={ContactPage} />
     </Route>
