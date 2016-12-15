@@ -4,14 +4,20 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as userAction from '../../actions/userAction';
 import UserList from './UserList';
+import {browserHistory} from 'react-router';
 
 class UserPage extends React.Component {
   constructor(props, context){
     super(props, context);
+    this.redirectToAddUserPage = this.redirectToAddUserPage.bind(this);
   }
 
   userRow(user, index) {
     return <div key={index}>{user.id}</div>;
+  }
+
+  redirectToAddUserPage() {
+    browserHistory.push('/user');
   }
 
   render() {
@@ -21,6 +27,10 @@ class UserPage extends React.Component {
       <div>
         <Helmet title="User"/>
         <h1>Users</h1>
+        <input type="submit"
+               value="Add User"
+               className="btn btn-primary"
+               onClick={this.redirectToAddUserPage}/>
         <UserList users={users}/>
       </div>
     );

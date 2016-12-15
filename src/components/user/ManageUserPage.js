@@ -12,7 +12,10 @@ class ManageUserPage extends React.Component {
       user: Object.assign({}, this.props.user),
       errors: {}
     };
+
     this.updateUserState = this.updateUserState.bind(this);
+    this.saveUser = this.saveUser.bind(this);
+
   }
 
   updateUserState(event){
@@ -22,10 +25,16 @@ class ManageUserPage extends React.Component {
     return this.setState({user: user});
   }
 
+  saveUser(event){
+    event.preventDefault();
+    this.props.actions.saveUser(this.state.user);
+  }
+
   render() {
     return(
         <UserForm
           onChange={this.updateUserState}
+          onSave={this.saveUser}
           user={this.state.user}
           errors={this.state.errors}
         />
@@ -34,7 +43,8 @@ class ManageUserPage extends React.Component {
 }
 
 ManageUserPage.PropTypes = {
-  myProp : PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+  actions : PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
