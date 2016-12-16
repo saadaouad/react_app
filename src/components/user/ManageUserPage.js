@@ -12,9 +12,15 @@ class ManageUserPage extends React.Component {
       user: Object.assign({}, this.props.user),
       errors: {}
     };
-    
+
     this.updateUserState = this.updateUserState.bind(this);
     this.saveUser = this.saveUser.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.user.id != nextProps.user.id) {
+      this.setState({user: Object.assign({}, nextProps.user)});
+    }
   }
 
   updateUserState(event){
@@ -51,8 +57,21 @@ ManageUserPage.contextTypes = {
   router: PropTypes.object
 };
 
+function getUserById(users, id) {
+  const user = users.filter(user => user.id == id);
+  if(user.length) return user[0];
+  return null;
+}
+
 function mapStateToProps(state, ownProps) {
+  const userId = ownProps.params.id; //from the path `/user/:id`
+
   let user = {id: '', firstName: '', lastName: '', profile: ''};
+
+  if(userId && state.users.length > 0) {
+    user = getUserById(state.users, userId);
+  }
+
   return {
     user: user
   };
