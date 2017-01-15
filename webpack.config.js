@@ -20,6 +20,10 @@ module.exports = {
         loader: 'babel'
       },
       {
+        test: /(\.css)$/,
+        loaders: ['style', 'css']
+      },
+      {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('css!sass')
       }
