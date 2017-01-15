@@ -34,7 +34,14 @@ class ManageUserPage extends React.Component {
   saveUser(event){
     event.preventDefault();
     this.setState({saving: true});
-    this.props.actions.saveUser(this.state.user);
+    this.props.actions.saveUser(this.state.user)
+      .then(() => this.redirect())
+      .catch(error => {
+        toastr.error(error);
+      });
+  }
+  redirect() {
+    this.setState({saving: false});
     toastr.success('User saved');
     this.context.router.push('/users');
   }
