@@ -43,7 +43,13 @@ class UserApi {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         // Simulate server-side validation
+        const minUserIdLength = 2;
         const minUserNameLength = 3;
+
+        if (user.id.length < minUserIdLength) {
+          reject(`Id user must be at least ${minUserIdLength} characters.`);
+        }
+
         if (user.firstName.length < minUserNameLength) {
           reject(`First Name must be at least ${minUserNameLength} characters.`);
         }

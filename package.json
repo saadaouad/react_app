@@ -32,6 +32,9 @@
     "babel-register": "^6.18.0",
     "css-loader": "^0.25.0",
     "enzyme": "^2.7.0",
+    "eslint": "^3.12.2",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-react": "^6.8.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "mocha": "^3.2.0",
     "node-sass": "^3.10.1",
@@ -39,6 +42,7 @@
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "watch": "^1.0.1",
+    "toastr": "^2.1.2",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   }
