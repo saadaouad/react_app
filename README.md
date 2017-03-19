@@ -1,7 +1,7 @@
 ## Usage
 
-Run the development environment with docker compose 
 ```bash
+# Run the development environment using docker compose 
 $ docker-compose build
 $ docker-compose up
 ```
