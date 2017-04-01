@@ -1,14 +1,15 @@
-FROM obytes/gal-nodejs-7.0:latest
+FROM obytes/nodejs-7.0:latest
+MAINTAINER Saad Aouad
 
-MAINTAINER Wael El Hachimi
-ENV PORT=9000
+RUN npm install webpack -g
 
-COPY . /var/www
+
 WORKDIR /var/www
+COPY package.json /var/www
+RUN npm cache clean && npm config set registry http://registry.npmjs.org/ && npm install --silent --progress=false
 
-# Install package.json
-RUN npm install
+COPY . /var/www/
 
-EXPOSE ${PORT}
+# RUN webpack
 
-ENTRYPOINT ["npm", "start"]
+CMD ["npm", "start"]
