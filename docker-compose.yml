@@ -11,23 +11,3 @@ services:
     environment:
       - NODE_ENV=dev
     command: ["npm", "start"]
-
-
-  chromedriver:
-    image: obytes/chromedriver-2.27
-    environment:
-      - VNC_ENABLED=true
-      - EXPOSE_X11=true
-    ports:
-      - 5900:5900
-  nightwatch:
-    image: obytes/nightwatch.js-0.9.12
-    build:
-      context: .
-    depends_on:
-      - chromedriver
-      - app
-    environment:
-      - WAIT_FOR_HOSTS=app:9000 chromedriver:4444 chromedriver:6060
-    volumes:
-      - ./test:/home/node
