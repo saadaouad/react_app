@@ -4,6 +4,7 @@
   "description": "Building a React and Redux App",
   "main": "main.js",
   "scripts": {
+    "build": "webpack --optimize-minimize",
     "start": "npm run dev",
     "dev:lint": "npm-run-all --parallel dev lint:watch",
     "dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./webpack.config.js"
