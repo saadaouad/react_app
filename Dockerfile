@@ -1,4 +1,4 @@
-FROM obytes/nodejs-7.0:latest
+FROM node:7.10
 MAINTAINER Saad Aouad
 
 RUN npm install webpack -g
