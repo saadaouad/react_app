@@ -4,16 +4,16 @@
   "description": "Building a React and Redux App",
   "main": "main.js",
   "scripts": {
-    "build": "webpack --optimize-minimize",
-    "start": "npm run dev",
     "dev:lint": "npm-run-all --parallel dev lint:watch",
-    "dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./webpack.config.js"
+    "dev": "webpack-dev-server --config ./webpack.config.js",
+    "start": "npm run dev",
+    "build": "webpack --optimize-minimize"
   },
   "author": "Saad AOUAD",
   "license": "ISC",
   "dependencies": {
     "react": "^15.3.2",
-    "react-dom": "^15.3.2",
+    "react-dom": "^15.3.2", 
     "react-helmet": "^3.2.2",
     "react-redux": "^4.4.6",
     "react-router": "^3.0.0",
