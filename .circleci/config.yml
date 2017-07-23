@@ -1,0 +1,9 @@
+version: 2
+jobs:
+   build:
+     working_directory: /var/www
+     docker:
+       - image: node:7.10
+     steps:
+       - checkout
+       - run: echo "hello world"
