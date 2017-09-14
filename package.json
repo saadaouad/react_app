@@ -9,13 +9,15 @@
     "start": "npm run dev",
     "build": "webpack --optimize-minimize",
     "predeploy": "npm run build",
-    "deploy": "./scripts/deploy.sh"
+    "deploy": "./scripts/deploy.sh",
+    "build:sitemap": "node ./src/sitemap-builder.js"
   },
   "author": "Saad AOUAD",
   "license": "ISC",
   "dependencies": {
+    "prop-types": "^15.5.10",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2", 
+    "react-dom": "^15.3.2",
     "react-helmet": "^3.2.2",
     "react-redux": "^4.4.6",
     "react-router": "^3.0.0",

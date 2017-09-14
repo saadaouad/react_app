@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TextInput from '../common/TextInput';
 
 const UserForm = ({user, onSave, onChange, loading, errors}) => {
