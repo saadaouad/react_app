@@ -60,5 +60,6 @@
     "watch": "^1.0.1",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
-  }
+  },
+  "repository": "git@github.com:saadaouad/react_app.git"
 }
